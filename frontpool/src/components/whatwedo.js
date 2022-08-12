@@ -1,4 +1,5 @@
-import poster from '../img/pool1.jpg'
+import poster from '../img/pool4.jpg'
+import poster2 from '../img/pool2.jpg'
 
 export default function Services() {
     return (
@@ -16,11 +17,11 @@ export default function Services() {
             </div>
             <div className='service-card left-img'>
                 <div className='service-img'>
-                    <img src={poster} alt='Clean Pool 2' className='border-right' />
+                    <img src={poster2} alt='Clean Pool 2' className='border-right' />
                 </div>
-                <div className='service-text right'>
-                    <h1>We will clean your pool for money</h1>
-                    <p>we are experts in pool cleaning tech</p>
+                <div className='service-text-right'>
+                    <h1>Call us to organize your pool parties</h1><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for money</h1>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;we are experts in party tech</p>
                 </div>
 
             </div>
