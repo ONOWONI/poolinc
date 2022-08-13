@@ -20,7 +20,8 @@ export default function Services() {
                     <img src={poster2} alt='Clean Pool 2' className='border-right' />
                 </div>
                 <div className='service-text-right'>
-                    <h1>Call us to organize your pool parties</h1><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for money</h1>
+                    <h1>Call us to organize your pool parties</h1>
+                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for money</h1>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;we are experts in party tech</p>
                 </div>
 

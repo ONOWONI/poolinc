@@ -184,7 +184,13 @@ button:active {
 }
 
 .shop-card-container {
-  display: flex;
+  padding-top: 30px;
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3);
+  column-gap: 20px;
+  row-gap: 50px;
 }
 
 .shop-card{
