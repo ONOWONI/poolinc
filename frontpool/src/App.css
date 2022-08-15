@@ -6,6 +6,8 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color:  whitesmoke;
 }
 
@@ -50,13 +52,16 @@ body {
   transform:translate(5px, 10px);
 }
 
+.contact-btn {
+  text-decoration: none;
+}
 
 
-
-button {
+.header-contact {
   padding: 1.5em 5em;
   background: rgb(43, 132, 247);
   border: none;
+  /* text-decoration: none; */
   margin-right: 50px;
   border-radius: .5rem;
   color: #ffffff;
@@ -78,7 +83,7 @@ button {
   2px 2px 2px rgba(255, 255, 255, .05),
   2px 2px 4px rgba(0, 0, 0, .1);
 } */
-button:active {
+.header-contact:active {
   box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
               -6px -6px 10px rgba(255, 255, 255, .5),
               6px 6px 8px rgba(255, 255, 255, .075),
@@ -99,11 +104,18 @@ button:active {
 }
 
 .pooltext{
+  background-color: rgb(47, 135, 218);
   position: absolute;
   top: 50%;
-  /* left: 50%; */
-  justify-content: space-between;
+  left: 50%;
+  /* justify-content: space-between; */
   display: flex;
+  flex-direction: column;
+}
+
+.pooltext p {
+  color: whitesmoke;
+  font-size: 1.5rem;
 }
 
 
@@ -276,7 +288,7 @@ button:active {
 .pro-card {
   width: 200px;
   height: 300px;
-  background-color: rgba(103, 190, 206, 0.486);
+  background-color:  rgba(43, 132, 247, 0.5);
   border: solid black 1px;
   display: flex;
   flex-direction: column;
@@ -291,8 +303,92 @@ button:active {
 }
 
 
+/* reviews  */
 
 
+#reviews {
+  margin-top: 80px;
+}
+
+#reviews h2 {
+  text-align: center;
+  padding: 30px;
+  font-family: chicks;
+  font-size: 3rem;
+}
+
+.review-container {
+  display: flex;
+  align-items: center;
+}
+
+#left, #right {
+  margin-left: 40px;
+  height: 70px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.review-card {
+  border: solid black 1px ;
+  padding: 20px;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.review-text {
+  text-align: center;
+}
+
+.review-owner {
+  margin-left: 80%;
+}
+
+
+/* Start of Contact area */
+
+#contact {
+  position: relative;
+  margin-top: 50px;
+  width: 98.7vw;
+}
+
+.contact-header {
+  position: absolute;
+  top: 50px;
+  margin: 0 auto;
+  color:  whitesmoke;
+  font-family: chicks;
+  font-size: 3rem;
+}
+
+.telephone {
+  width: 100%;
+}
+
+.contact {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  display: inline-block;
+  padding: 10px;
+  width: 500px;
+  background-color: #fff;
+}
+
+.contact a {
+  line-height: 50px;
+  /* color: black; */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer{
+  margin-top: -10px;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(25, 87, 180, 0.863);
+}
 
 /* Media queries */
 

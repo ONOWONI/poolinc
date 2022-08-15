@@ -1,4 +1,8 @@
 import profilePic from '../img/guy1.jpg'
+import sadesh from '../img/sadesh.jpg'
+import hotGirl from '../img/hot_girl_thumb.jpg'
+import european from '../img/european.jpg'
+import boy3 from '../img/boy3_thumb.jpg'
 
 export default function Professionals() {
     return (
@@ -12,24 +16,24 @@ export default function Professionals() {
                         <p>Manager</p>
                     </div>
                     <div className='pro-card'>
-                        <img src={profilePic} className='pro-img' alt='profile pic of team member'/>
+                        <img src={sadesh} className='pro-img' alt='profile pic of team member'/>
                         <h5>Ben Dover</h5>
                         <p>Manager</p>
                     </div>
                     <div className='pro-card'>
-                        <img src={profilePic} className='pro-img' alt='profile pic of team member'/>
+                        <img src={hotGirl} className='pro-img' alt='profile pic of team member'/>
                         <h5>Ben Dover</h5>
                         <p>Manager</p>
                     </div>
                 </div>
                 <div className='bottom-container'>
                     <div className='pro-card'>
-                        <img src={profilePic} className='pro-img' alt='profile pic of team member'/>
+                        <img src={european} className='pro-img' alt='profile pic of team member'/>
                         <h5>Ben Dover</h5>
                         <p>Manager</p>
                     </div>
                     <div className='pro-card'>
-                        <img src={profilePic} className='pro-img' alt='profile pic of team member'/>
+                        <img src={boy3} className='pro-img' alt='profile pic of team member'/>
                         <h5>Ben Dover</h5>
                         <p>Manager</p>
                     </div>
