@@ -14,6 +14,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   box-shadow: 0px -14px -17px 4px rgba(0,0,0,0.48);
 -webkit-box-shadow: 0px -14px -17px 4px rgba(0,0,0,0.48);
 -moz-box-shadow: 0px -14px -17px 4px rgba(0,0,0,0.48);
@@ -174,7 +175,7 @@ button:active {
 
 /* Start of Shop section */
 .shop {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .shop h3 {
@@ -185,11 +186,16 @@ button:active {
 
 .shop-card-container {
   padding-top: 30px;
-  margin-left: 20px;
-  display: grid;
+  /* margin-left: 20px; */
+  /* display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3);
   column-gap: 20px;
+  row-gap: 50px; */
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
   row-gap: 50px;
 }
 
@@ -232,4 +238,122 @@ button:active {
 
 .card-desc {
   padding: 15px;
+}
+
+
+/* professionals */
+
+#pros {
+  margin-top: 150px;
+}
+
+#pros h3{
+  text-align: center;
+  font-family: chicks;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.pro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-container {
+  display: flex;
+  column-gap: 120px;
+}
+
+.bottom-container {
+  display: flex;
+  column-gap: 120px;
+  margin-top: -40px;
+}
+
+.pro-card {
+  width: 200px;
+  height: 300px;
+  background-color: rgba(103, 190, 206, 0.486);
+  border: solid black 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pro-img{
+  border-radius: 500px;
+  width: 80%;
+  height: 50%;
+}
+
+
+
+
+
+/* Media queries */
+
+@media (max-width:650px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .header-container {
+    width: 60vw;
+  }
+
+  .header-logo {
+    width: 100%;
+  }
+
+  .link-container {
+    display: none;
+  }
+
+  .header-container button {
+    display: none;
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+  }
+
+  .service-img {
+    width: 80vw;
+  }
+  .service-text {
+    margin: 0;
+  }
+
+  .service-text h1{
+    text-align: center;
+    font-size: 3rem;
+  }
+  .service-text p{
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .service-img img{
+    height: 170px;
+    border-radius: 100%;
+    align-self: center;
+  }
+  .right {
+    margin: 0;
+  }
+  .shop-card-container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .shop-card{
+    width: 80%;
+  }
 }

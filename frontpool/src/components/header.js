@@ -10,8 +10,8 @@ export default function Header() {
                     <li><a href='#'>Home</a></li>
                     <li><a href='#services'>Services</a></li>
                     <li><a href='#shop'>Store</a></li>
+                    <li><a href='#pros'>Professionals</a></li>
                     <li><a href='#'>Trivia</a></li>
-                    <li><a href='#'>Party</a></li>
                 </ul>
             </div>
             <button className='header-contact'>Contact Us</button>

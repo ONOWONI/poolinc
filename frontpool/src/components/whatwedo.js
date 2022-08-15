@@ -21,8 +21,8 @@ export default function Services() {
                 </div>
                 <div className='service-text-right'>
                     <h1>Call us to organize your pool parties</h1>
-                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for money</h1>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;we are experts in party tech</p>
+                    <h1>for money</h1>
+                    <p>we are experts in party tech</p>
                 </div>
 
             </div>
