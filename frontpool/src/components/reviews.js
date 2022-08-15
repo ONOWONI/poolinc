@@ -12,6 +12,7 @@ export default function Reviews() {
                 </div>
                 <button id="right">Next</button>
             </div>
+            <button className='header-contact' id='review-btn'>Submit your review</button>
         </div>
     )
 }

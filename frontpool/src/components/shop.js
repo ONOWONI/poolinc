@@ -41,7 +41,7 @@ class Shop extends React.Component{
                                 <span className='card-qty'>20 Pieces</span>
                             </div>
                             <hr></hr>
-                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it </p>
+                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it. and i just want to write till i find out the true meaning of life or the meaning of love or even why we all need to be alive and not dead </p>
                         </div>
                     </div>
                     <div className='shop-card'>
