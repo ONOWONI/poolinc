@@ -1,167 +1,56 @@
 import img from '../img/pool.jpg'
 import React from "react";
+import data from '../data';
+import Modal from './modal';
 
 
 
-
-class Shop extends React.Component{
-    constructor() {
-        super();
-        this.state={
-            data : []
+export default function Shop() {
+    const [openModal, setOpenModal] = React.useState(false)
+    const [modalData, setModalData] = React.useState(
+        {
+            name : '',
+            price : 0,
+            quantity : 0,
+            desc : '',
+            image : '',
         }
+    )
+    function handleClick(id) {
+        setModalData(id)
+        setOpenModal(true)
+        console.log(modalData)
     }
 
-    fetchData() {
-        fetch("http://localhosthttp:8000/api/products/").then(res => res.json()).then((data) => {
-            this.setState({data:data})
-            console.log(data)
-        })
+    function closebtn() {
+        return setOpenModal(false)
     }
-
-    componentDidMount() {
-        this.fetchData();
-    }
-    render() {
-        const empData = this.state.data;
-        const rows = empData.map(pre => <div key={pre.id}>{pre.name}</div>)
-        return (
-            <section className='shop' id='shop'>
-                <h3>Store</h3>
-                {rows}
-                <div className='shop-card-container'>
-                    <div className='shop-card'>
-                        <div className='flex-img'>
-                            <img src={img} alt='shop card img' />
-                        </div>
-                        <div className='card-info'>
-                            <h4 className='card-name'>Name</h4>
-                            <div className='price-qty'>
-                                <span className='card-price'>$20.00</span>
-                                <span className='card-qty'>20 Pieces</span>
-                            </div>
-                            <hr></hr>
-                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it. and i just want to write till i find out the true meaning of life or the meaning of love or even why we all need to be alive and not dead </p>
-                        </div>
-                    </div>
-                    <div className='shop-card'>
-                        <div className='flex-img'>
-                            <img src={img} alt='shop card img' />
-                        </div>
-                        <div className='card-info'>
-                            <h4 className='card-name'>Name</h4>
-                            <div className='price-qty'>
-                                <span className='card-price'>$20.00</span>
-                                <span className='card-qty'>20 Pieces</span>
-                            </div>
-                            <hr></hr>
-                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it </p>
-                        </div>
-                    </div>
-                    <div className='shop-card'>
-                        <div className='flex-img'>
-                            <img src={img} alt='shop card img' />
-                        </div>
-                        <div className='card-info'>
-                            <h4 className='card-name'>Name</h4>
-                            <div className='price-qty'>
-                                <span className='card-price'>$20.00</span>
-                                <span className='card-qty'>20 Pieces</span>
-                            </div>
-                            <hr></hr>
-                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it </p>
-                        </div>
-                    </div>
-                    <div className='shop-card'>
-                        <div className='flex-img'>
-                            <img src={img} alt='shop card img' />
-                        </div>
-                        <div className='card-info'>
-                            <h4 className='card-name'>Name</h4>
-                            <div className='price-qty'>
-                                <span className='card-price'>$20.00</span>
-                                <span className='card-qty'>20 Pieces</span>
-                            </div>
-                            <hr></hr>
-                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it </p>
-                        </div>
-                    </div>
-                    <div className='shop-card'>
-                        <div className='flex-img'>
-                            <img src={img} alt='shop card img' />
-                        </div>
-                        <div className='card-info'>
-                            <h4 className='card-name'>Name</h4>
-                            <div className='price-qty'>
-                                <span className='card-price'>$20.00</span>
-                                <span className='card-qty'>20 Pieces</span>
-                            </div>
-                            <hr></hr>
-                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it </p>
-                        </div>
-                    </div>
-                    <div className='shop-card'>
-                        <div className='flex-img'>
-                            <img src={img} alt='shop card img' />
-                        </div>
-                        <div className='card-info'>
-                            <h4 className='card-name'>Name</h4>
-                            <div className='price-qty'>
-                                <span className='card-price'>$20.00</span>
-                                <span className='card-qty'>20 Pieces</span>
-                            </div>
-                            <hr></hr>
-                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it </p>
-                        </div>
-                    </div>
-                    <div className='shop-card'>
-                        <div className='flex-img'>
-                            <img src={img} alt='shop card img' />
-                        </div>
-                        <div className='card-info'>
-                            <h4 className='card-name'>Name</h4>
-                            <div className='price-qty'>
-                                <span className='card-price'>$20.00</span>
-                                <span className='card-qty'>20 Pieces</span>
-                            </div>
-                            <hr></hr>
-                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it </p>
-                        </div>
-                    </div>
-                    <div className='shop-card'>
-                        <div className='flex-img'>
-                            <img src={img} alt='shop card img' />
-                        </div>
-                        <div className='card-info'>
-                            <h4 className='card-name'>Name</h4>
-                            <div className='price-qty'>
-                                <span className='card-price'>$20.00</span>
-                                <span className='card-qty'>20 Pieces</span>
-                            </div>
-                            <hr></hr>
-                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it </p>
-                        </div>
-                    </div>
-                    <div className='shop-card'>
-                        <div className='flex-img'>
-                            <img src={img} alt='shop card img' />
-                        </div>
-                        <div className='card-info'>
-                            <h4 className='card-name'>Name</h4>
-                            <div className='price-qty'>
-                                <span className='card-price'>$20.00</span>
-                                <span className='card-qty'>20 Pieces</span>
-                            </div>
-                            <hr></hr>
-                            <p className='card-desc'>desc just a bunch of words to fill up space. i would have used lorem but fuck it </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        )
-    }
+    const element = data.map(item => <div key={item.id} className='shop-card' onClick={() => handleClick(item)}>
+        <div className='flex-img'>
+            <img src={`../img/${item.image}`} />
+        </div>
+        <div className='card-info'>
+            <h4 className='card-name'>{item.name}</h4>
+            <div className='price-qty'>
+                <span className='card-price'>${item.price}</span>
+                <span className='card-qty'>{item.quantity} Pieces</span>
+            </div>
+            <hr></hr>
+            <p className='card-desc'>{item.desc}</p>
+        </div>
+    </div>)
+    return (
+        <section className='shop' id='shop'>
+            <Modal data={modalData} openModal={openModal} closebtn={() => closebtn()}/>
+            <h3>Store</h3>
+            <div className='shop-card-container'>
+                {/* <Modal /> */}
+                {element}
+            </div>
+        </section>
+    )
 }
 
 
 
-export default Shop
+

@@ -1,3 +1,5 @@
+import reviewData from "../reviewData"
+
 export default function Reviews() {
     return (
         <div id="reviews" >
