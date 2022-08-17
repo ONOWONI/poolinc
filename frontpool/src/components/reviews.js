@@ -1,54 +1,88 @@
-import React, { useState } from "react"
-import reviewData from "../reviewData"
+import React from "react"
 import ReviewModal from "./reviewModal"
 
-export default function Reviews() {
-    const [reviewDict, setReviewDict] = React.useState({
-        review : "The poolinc crew are so amazing at their jobs, they came to clean my pool and they did a very amazing job i had to pay double what we agreed on",
-        name : "MA NIGGA "
-    })
-    const [count, setCount] = React.useState(0)
-    const [modal, setModal] = React.useState(false)
 
-    function nextClick() {
-        if (count < reviewData.length -1) {
-            setCount(prev => prev + 1)
+export default class Reviews extends React.Component{
+
+    constructor() {
+        super();
+        this.state={
+            data:[],
+            reviewDict :{
+                review : "The poolinc crew are so amazing at their jobs, they came to clean my pool and they did a very amazing job i had to pay double what we agreed on",
+                name : "MA NIGGA "
+            },
+            count :0,
+            modal: false
+        };
+        this.prevClick = this.prevClick.bind(this)
+        this.nextClick = this.nextClick.bind(this)
+    }
+
+    fetchData() {
+        fetch('http://127.0.0.1:8000/api/reviews/')
+        .then(res => res.json())
+        .then((data) => {
+            this.setState({
+                data: data
+            });
+            console.log(data);
+        });
+    }
+
+    componentDidMount(){
+        this.fetchData();
+    }
+
+    nextClick() {
+        var count = this.state.count
+        var data = this.state.data
+        if (count < data.length -1) {
+            this.setState(prev => {
+                return {count : prev.count + 1}
+            })
         } else {
-            setCount(0)
+            this.setState({count: 0})
         }
-        setReviewDict(reviewData[count])
-        console.log(count);
+        this.setState({reviewDict : this.state.data[this.state.count]})
+        console.log(this.state.count);
     }
 
-    function prevClick() {
-        if (count > 0 ) {
-            setCount(prev => prev - 1)
+
+    prevClick() {
+        if (this.state.count > 0 ) {
+            this.setState(prev => {
+                return {count : prev.count - 1}
+            })
         } else {
-            setCount(reviewData.length -1)
+            this.setState({count : this.state.data.length -1})
         }
-        setReviewDict(reviewData[count])
-        console.log(count);
+        this.setState({reviewDict : this.state.data[this.state.count]})
+        console.log(this.state.count);
     }
 
 
-    function closeModal(){
-        setModal(false)
+
+    closeModal(){
+        this.setState({modal : false})
     }
-    return (
-        <div id="reviews" >
-            <h2>Feedback from our clients</h2>
-            <div className="review-container">
-                <button id="left" onClick={prevClick}>Prev</button>
-                <div className="review-card">
-                    <blockquote className='review-text'>
-                        {reviewDict.review}
-                    </blockquote>
-                    <cite className="review-owner">~ {reviewDict.name}~</cite>
+    render() {
+        return (
+            <div id="reviews" >
+                <h2>Feedback from our clients</h2>
+                <div className="review-container">
+                    <button id="left" onClick={this.prevClick}>Prev</button>
+                    <div className="review-card">
+                        <blockquote className='review-text'>
+                            {this.state.reviewDict.review}
+                        </blockquote>
+                        <cite className="review-owner">~ {this.state.reviewDict.name}~</cite>
+                    </div>
+                    <button id="right" onClick={this.nextClick}>Next</button>
                 </div>
-                <button id="right" onClick={nextClick}>Next</button>
+                <button className='header-contact' id='review-btn' onClick={() => this.setState({modal : true})}>Submit your review</button>
+                <ReviewModal modal={this.state.modal} close={() => this.closeModal()} />
             </div>
-            <button className='header-contact' id='review-btn' onClick={() => setModal(true)}>Submit your review</button>
-            <ReviewModal modal={modal} close={() => closeModal()} />
-        </div>
-    )
+        )
+    }
 }
