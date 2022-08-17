@@ -513,6 +513,27 @@ footer{
               6px 6px 10px rgba(0, 0, 0, .15);
 
 }
+
+
+
+.modal-info-review {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  z-index: 11;
+}
+
+.modal-info-review input {
+  height: 40px;
+  border-radius: 10px;
+  
+}
+
+.modal-info-review textarea {
+  height: 200px;
+}
+
 /* Media queries */
 
 @media (max-width:650px) {
