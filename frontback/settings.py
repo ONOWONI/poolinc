@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "pool",
     "rest_framework",
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -43,6 +44,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     #
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
+]
+
+
+CORS_ALLOWED_ORIGINS = [
+"http://localhost:3000",
 ]
 
 ROOT_URLCONF = "frontback.urls"
