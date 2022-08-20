@@ -50,7 +50,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-"https://peaceful-bavarois-c73514.netlify.app",
+"https://peaceful-bavarois-c73514.netlify.app/",
 ]
 
 ROOT_URLCONF = "frontback.urls"
