@@ -49,11 +49,11 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://peaceful-bavarois-c73514.netlify.app",
+    "https://poolinc.netlify.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://peaceful-bavarois-c73514.netlify.app',
+    "https://poolinc.netlify.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
