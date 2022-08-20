@@ -48,10 +48,11 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
 ]
 
+CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ALLOWED_ORIGINS = [
-"https://peaceful-bavarois-c73514.netlify.app/",
-]
+CORS_ORIGIN_WHITELIST = (
+    'https://peaceful-bavarois-c73514.netlify.app/',
+)
 
 ROOT_URLCONF = "frontback.urls"
 
